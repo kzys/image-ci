@@ -26,7 +26,6 @@ jobs:
           sudo bash tools/install-tools.sh
           sudo systemctl restart containerd
       - name: Login to GHCR
-        if: github.event_name != 'pull_request'
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
