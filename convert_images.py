@@ -122,12 +122,14 @@ class OriginalConversionJob(ConversionJob):
         run(
             [
                 "crane",
-                "copy",
+                "index",
+                "filter",
+                src_image_name,
                 "--platform",
                 "linux/amd64",
                 "--platform",
                 "linux/arm64",
-                src_image_name,
+                "-t",
                 self.converted_image_name,
             ]
         )
